@@ -1,0 +1,60 @@
+{
+  "app": {
+    "name": "Q CRM",
+    "tagline": "Kundenbeziehungen, überall."
+  },
+  "nav": {
+    "dashboard": "Übersicht",
+    "customers": "Kunden",
+    "deals": "Geschäfte",
+    "tasks": "Aufgaben",
+    "reports": "Berichte",
+    "settings": "Einstellungen"
+  },
+  "common": {
+    "search": "Suchen",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "loading": "Wird geladen…",
+    "menu": "Menü",
+    "close": "Schließen"
+  },
+  "dashboard": {
+    "title": "Übersicht",
+    "welcome": "Willkommen zurück",
+    "subtitle": "Das passiert heute in Ihrer Pipeline.",
+    "kpi": {
+      "customers": "Kunden",
+      "openDeals": "Offene Geschäfte",
+      "revenue": "Umsatz",
+      "tasksDue": "Fällige Aufgaben"
+    },
+    "recentActivity": "Letzte Aktivitäten",
+    "empty": "Noch nichts hier — Ihre Aktivitäten erscheinen, sobald Sie loslegen."
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "subtitle": "Passen Sie an, wie Q CRM aussieht und spricht.",
+    "appearance": {
+      "title": "Darstellung",
+      "description": "Wählen Sie Hell, Dunkel oder dem System folgen.",
+      "system": "System",
+      "light": "Hell",
+      "dark": "Dunkel"
+    },
+    "brand": {
+      "title": "Farbschema",
+      "description": "Wählen Sie eine Markenpalette. Änderungen wirken sofort."
+    },
+    "language": {
+      "title": "Sprache",
+      "description": "Q CRM startet standardmäßig in Ihrer Gerätesprache."
+    }
+  },
+  "language": {
+    "en": "English",
+    "tr": "Türkçe",
+    "de": "Deutsch",
+    "ar": "العربية"
+  }
+}

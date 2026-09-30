@@ -1,156 +1,111 @@
 <script lang="ts">
-  import { invoke } from "@tauri-apps/api/core";
+  import { i18n } from "$lib/i18n";
+  import Icon from "$lib/components/Icon.svelte";
 
-  let name = $state("");
-  let greetMsg = $state("");
-
-  async function greet(event: Event) {
-    event.preventDefault();
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    greetMsg = await invoke("greet", { name });
-  }
+  // Placeholder KPI data — wired to real data later.
+  const kpis = [
+    { key: "dashboard.kpi.customers", value: "1,248", icon: "users", tone: "primary" },
+    { key: "dashboard.kpi.openDeals", value: "37", icon: "trending", tone: "info" },
+    { key: "dashboard.kpi.revenue", value: "₺482K", icon: "chart", tone: "success" },
+    { key: "dashboard.kpi.tasksDue", value: "9", icon: "check", tone: "warning" },
+  ];
 </script>
 
-<main class="container">
-  <h1>Welcome to Tauri + Svelte</h1>
+<section class="page">
+  <header class="head">
+    <h1>{i18n.t("dashboard.welcome")}</h1>
+    <p class="muted">{i18n.t("dashboard.subtitle")}</p>
+  </header>
 
-  <div class="row">
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo vite" alt="Vite Logo" />
-    </a>
-    <a href="https://tauri.app" target="_blank">
-      <img src="/tauri.svg" class="logo tauri" alt="Tauri Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank">
-      <img src="/svelte.svg" class="logo svelte-kit" alt="SvelteKit Logo" />
-    </a>
+  <div class="kpis">
+    {#each kpis as kpi (kpi.key)}
+      <article class="card kpi">
+        <span class="kpi-icon tone-{kpi.tone}"><Icon name={kpi.icon} /></span>
+        <div>
+          <div class="kpi-value">{kpi.value}</div>
+          <div class="muted kpi-label">{i18n.t(kpi.key)}</div>
+        </div>
+      </article>
+    {/each}
   </div>
-  <p>Click on the Tauri, Vite, and SvelteKit logos to learn more.</p>
 
-  <form class="row" onsubmit={greet}>
-    <input id="greet-input" placeholder="Enter a name..." bind:value={name} />
-    <button type="submit">Greet</button>
-  </form>
-  <p>{greetMsg}</p>
-</main>
+  <article class="card activity">
+    <h2>{i18n.t("dashboard.recentActivity")}</h2>
+    <p class="muted empty">{i18n.t("dashboard.empty")}</p>
+  </article>
+</section>
 
 <style>
-.logo.vite:hover {
-  filter: drop-shadow(0 0 2em #747bff);
-}
-
-.logo.svelte-kit:hover {
-  filter: drop-shadow(0 0 2em #ff3e00);
-}
-
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color: #0f0f0f;
-  background-color: #f6f6f6;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-.container {
-  margin: 0;
-  padding-top: 10vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: 0.75s;
-}
-
-.logo.tauri:hover {
-  filter: drop-shadow(0 0 2em #24c8db);
-}
-
-.row {
-  display: flex;
-  justify-content: center;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
-}
-
-h1 {
-  text-align: center;
-}
-
-input,
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  color: #0f0f0f;
-  background-color: #ffffff;
-  transition: border-color 0.25s;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-}
-
-button {
-  cursor: pointer;
-}
-
-button:hover {
-  border-color: #396cd8;
-}
-button:active {
-  border-color: #396cd8;
-  background-color: #e8e8e8;
-}
-
-input,
-button {
-  outline: none;
-}
-
-#greet-input {
-  margin-right: 5px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #f6f6f6;
-    background-color: #2f2f2f;
+  .page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    max-width: 1100px;
   }
-
-  a:hover {
-    color: #24c8db;
+  .head h1 {
+    margin: 0 0 var(--space-1);
+    font-size: var(--font-size-2xl);
+    line-height: var(--line-height-tight);
   }
-
-  input,
-  button {
-    color: #ffffff;
-    background-color: #0f0f0f98;
+  .muted {
+    color: var(--color-text-muted);
+    margin: 0;
   }
-  button:active {
-    background-color: #0f0f0f69;
+  .card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    box-shadow: var(--shadow-sm);
   }
-}
-
+  .kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-4);
+  }
+  .kpi {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+  }
+  .kpi-icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    flex: none;
+  }
+  .tone-primary {
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+  }
+  .tone-info {
+    background: var(--color-info-bg);
+    color: var(--color-info);
+  }
+  .tone-success {
+    background: var(--color-success-bg);
+    color: var(--color-success);
+  }
+  .tone-warning {
+    background: var(--color-warning-bg);
+    color: var(--color-warning);
+  }
+  .kpi-value {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+  .kpi-label {
+    font-size: var(--font-size-sm);
+  }
+  .activity h2 {
+    margin: 0 0 var(--space-3);
+    font-size: var(--font-size-lg);
+  }
+  .empty {
+    padding: var(--space-6) 0;
+    text-align: center;
+  }
 </style>

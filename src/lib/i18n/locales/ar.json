@@ -1,0 +1,60 @@
+{
+  "app": {
+    "name": "Q CRM",
+    "tagline": "علاقات العملاء، في كل مكان."
+  },
+  "nav": {
+    "dashboard": "لوحة التحكم",
+    "customers": "العملاء",
+    "deals": "الصفقات",
+    "tasks": "المهام",
+    "reports": "التقارير",
+    "settings": "الإعدادات"
+  },
+  "common": {
+    "search": "بحث",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "loading": "جارٍ التحميل…",
+    "menu": "القائمة",
+    "close": "إغلاق"
+  },
+  "dashboard": {
+    "title": "لوحة التحكم",
+    "welcome": "مرحباً بعودتك",
+    "subtitle": "إليك ما يحدث في مسار مبيعاتك اليوم.",
+    "kpi": {
+      "customers": "العملاء",
+      "openDeals": "الصفقات المفتوحة",
+      "revenue": "الإيرادات",
+      "tasksDue": "المهام المستحقة"
+    },
+    "recentActivity": "النشاط الأخير",
+    "empty": "لا شيء هنا بعد — سيظهر نشاطك عندما تبدأ العمل."
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "subtitle": "خصّص مظهر Q CRM ولغته.",
+    "appearance": {
+      "title": "المظهر",
+      "description": "اختر الفاتح أو الداكن أو اتبع النظام.",
+      "system": "النظام",
+      "light": "فاتح",
+      "dark": "داكن"
+    },
+    "brand": {
+      "title": "مجموعة الألوان",
+      "description": "اختر لوحة ألوان. تُطبَّق التغييرات فوراً."
+    },
+    "language": {
+      "title": "اللغة",
+      "description": "يفتح Q CRM بلغة جهازك افتراضياً."
+    }
+  },
+  "language": {
+    "en": "English",
+    "tr": "Türkçe",
+    "de": "Deutsch",
+    "ar": "العربية"
+  }
+}

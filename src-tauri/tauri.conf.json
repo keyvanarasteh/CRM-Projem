@@ -12,9 +12,11 @@
   "app": {
     "windows": [
       {
-        "title": "k1-crm",
-        "width": 800,
-        "height": 600
+        "title": "Q CRM",
+        "width": 1200,
+        "height": 800,
+        "minWidth": 360,
+        "minHeight": 560
       }
     ],
     "security": {

@@ -1,0 +1,60 @@
+{
+  "app": {
+    "name": "Q CRM",
+    "tagline": "Müşteri ilişkileri, her yerde."
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "customers": "Müşteriler",
+    "deals": "Fırsatlar",
+    "tasks": "Görevler",
+    "reports": "Raporlar",
+    "settings": "Ayarlar"
+  },
+  "common": {
+    "search": "Ara",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "loading": "Yükleniyor…",
+    "menu": "Menü",
+    "close": "Kapat"
+  },
+  "dashboard": {
+    "title": "Panel",
+    "welcome": "Tekrar hoş geldiniz",
+    "subtitle": "Bugün satış hattınızda olup bitenler burada.",
+    "kpi": {
+      "customers": "Müşteriler",
+      "openDeals": "Açık fırsatlar",
+      "revenue": "Gelir",
+      "tasksDue": "Bekleyen görevler"
+    },
+    "recentActivity": "Son etkinlikler",
+    "empty": "Henüz bir şey yok — çalışmaya başladıkça etkinlikleriniz burada görünecek."
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "subtitle": "Q CRM'in görünümünü ve dilini kişiselleştirin.",
+    "appearance": {
+      "title": "Görünüm",
+      "description": "Açık, koyu ya da sisteminizi takip eden modu seçin.",
+      "system": "Sistem",
+      "light": "Açık",
+      "dark": "Koyu"
+    },
+    "brand": {
+      "title": "Renk seti",
+      "description": "Bir marka paleti seçin. Değişiklikler anında uygulanır."
+    },
+    "language": {
+      "title": "Dil",
+      "description": "Q CRM varsayılan olarak cihaz dilinizde açılır."
+    }
+  },
+  "language": {
+    "en": "English",
+    "tr": "Türkçe",
+    "de": "Deutsch",
+    "ar": "العربية"
+  }
+}
